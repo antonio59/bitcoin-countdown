@@ -1,5 +1,7 @@
+import React from 'react'
 import './globals.css'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
@@ -53,6 +55,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script 
+          src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'
+          strategy="lazyOnload"
+        />
+        <Script id="kofi-init" strategy="lazyOnload">
+          {`
+            kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'O4O416CKYY');
+          `}
+        </Script>
+      </head>
       <body>{children}</body>
     </html>
   )

@@ -1,9 +1,14 @@
+"use client"
+
+import React from 'react'
 import BitcoinCountdown from '../components/bitcoin-countdown'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 bg-gradient-to-b from-gray-900 to-gray-800">
-      <BitcoinCountdown targetPrice={100000} />
+    <main className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-sm">
+        <BitcoinCountdown targetPrice={100000} />
+      </div>
     </main>
   )
 }
