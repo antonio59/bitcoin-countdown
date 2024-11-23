@@ -17,18 +17,6 @@ async function generateFavicons() {
       console.log(`Generated ${outputFile}`);
     }
 
-    // Generate .ico file
-    const icoBuffer = await sharp(inputSvg)
-      .resize(32, 32)
-      .toFormat('ico')
-      .toBuffer();
-    await fs.writeFile(path.join(outputDir, 'favicon.ico'), icoBuffer);
-    console.log('Generated favicon.ico');
-
-    // Copy SVG as icon.svg
-    await fs.copyFile(inputSvg, path.join(outputDir, 'icon.svg'));
-    console.log('Copied icon.svg');
-
     // Generate apple-touch-icon.png
     await sharp(inputSvg)
       .resize(180, 180)
@@ -36,7 +24,9 @@ async function generateFavicons() {
       .toFile(path.join(outputDir, 'apple-touch-icon.png'));
     console.log('Generated apple-touch-icon.png');
 
-    // Generate mask-icon.svg (Safari pinned tab icon)
+    // Copy SVG files
+    await fs.copyFile(inputSvg, path.join(outputDir, 'icon.svg'));
+    console.log('Copied icon.svg');
     await fs.copyFile(inputSvg, path.join(outputDir, 'mask-icon.svg'));
     console.log('Generated mask-icon.svg');
 
