@@ -57,14 +57,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script 
-          src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'
-          strategy="lazyOnload"
+          src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'
+          strategy="afterInteractive"
         />
-        <Script id="kofi-init" strategy="lazyOnload">
-          {`
-            kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'O4O416CKYY');
-          `}
-        </Script>
       </head>
       <body>{children}</body>
     </html>
