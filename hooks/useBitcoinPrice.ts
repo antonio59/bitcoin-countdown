@@ -13,7 +13,7 @@ export function useBitcoinPrice() {
         setLoading(true)
         setError(null)
         // Check if we're in test mode
-        const testPrice = searchParams.get('testPrice')
+        const testPrice = searchParams?.get('testPrice')
         if (testPrice) {
           setPrice(Number(testPrice))
           return
@@ -43,3 +43,4 @@ export function useBitcoinPrice() {
 
   return { price, error, loading }
 }
+

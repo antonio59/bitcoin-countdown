@@ -25,3 +25,4 @@ export function BitcoinConfetti({ show }: BitcoinConfettiProps) {
 
   return <Confetti width={windowSize.width} height={windowSize.height} recycle={false} numberOfPieces={1000} />
 }
+

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, Suspense } from 'react'
 import { useBitcoinPrice } from '../hooks/useBitcoinPrice'
 import { BitcoinConfetti } from './bitcoin-confetti'
 import { ArrowUpIcon, ArrowDownIcon } from 'lucide-react'
@@ -9,7 +9,7 @@ interface BitcoinCountdownProps {
   targetPrice?: number
 }
 
-export default function BitcoinCountdown({ targetPrice = 100000 }: BitcoinCountdownProps) {
+function BitcoinCountdownContent({ targetPrice = 100000 }: BitcoinCountdownProps) {
   const { price, error, loading } = useBitcoinPrice()
   const [prevPrice, setPrevPrice] = useState<number | null>(null)
   const [showConfetti, setShowConfetti] = useState(false)
@@ -104,3 +104,12 @@ export default function BitcoinCountdown({ targetPrice = 100000 }: BitcoinCountd
     </>
   )
 }
+
+export default function BitcoinCountdown(props: BitcoinCountdownProps) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BitcoinCountdownContent {...props} />
+    </Suspense>
+  )
+}
+
