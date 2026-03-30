@@ -27,9 +27,11 @@ All notable changes to this project will be documented in this file.
 
 - Add git-cliff config for changelog generation
 - Add git-cliff config for changelog generation
+- Add git-cliff config for changelog generation
 
 ### Documentation
 
+- Update changelog [skip ci]
 - Update changelog [skip ci]
 
 
