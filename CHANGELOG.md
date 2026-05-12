@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changes
 
+- Migrate to pnpm, fix critical and high npm vulns
 - Sharing support puppeteer
 - Favicon fix
 - Bug fixes
@@ -34,6 +35,7 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 
+- Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
