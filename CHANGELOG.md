@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
+### Bug Fixes
+
+- Update build script from npm to pnpm
+
 ### CI/CD
 
 - Make SARIF upload non-blocking when Code Scanning is disabled
@@ -35,6 +39,7 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 
+- Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
