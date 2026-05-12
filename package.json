@@ -1,32 +1,38 @@
 {
-    "name": "bitcoin-100k-countdown",
-    "version": "1.0.0",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "dev": "next dev",
-        "build": "npm run generate-images && next build",
-        "start": "next start",
-        "lint": "next lint",
-        "generate-images": "node scripts/generate-favicons.js && node scripts/generate-og-image.js"
-    },
-    "dependencies": {
-        "date-fns": "^3.0.0",
-        "lucide-react": "^0.279.0",
-        "next": "latest",
-        "react": "latest",
-        "react-confetti": "^6.1.0",
-        "react-day-picker": "^9.3.2",
-        "react-dom": "latest",
-        "sharp": "^0.32.5"
-    },
-    "devDependencies": {
-        "@types/node": "^20.6.2",
-        "@types/react": "^18.2.21",
-        "autoprefixer": "^10.4.15",
-        "postcss": "^8.4.29",
-        "puppeteer": "^23.9.0",
-        "tailwindcss": "^3.3.3",
-        "typescript": "^5.2.2"
+  "name": "bitcoin-100k-countdown",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run generate-images && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate-images": "node scripts/generate-favicons.js && node scripts/generate-og-image.js"
+  },
+  "dependencies": {
+    "date-fns": "^3.0.0",
+    "lucide-react": "^0.279.0",
+    "next": "latest",
+    "react": "latest",
+    "react-confetti": "^6.1.0",
+    "react-day-picker": "^9.3.2",
+    "react-dom": "latest",
+    "sharp": "^0.32.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "@types/react": "^18.2.21",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "puppeteer": "^23.9.0",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "overrides": {
+      "postcss": "^8.5.10"
     }
+  }
 }
