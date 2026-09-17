@@ -8,7 +8,7 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bitcoin-countdown.pages.dev'
 
 export const metadata: Metadata = {
   title: 'Bitcoin $100k — Reached',
