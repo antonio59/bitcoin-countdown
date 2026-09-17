@@ -35,6 +35,7 @@ All notable changes to this project will be documented in this file.
 
 ### Chores
 
+- Bump sharp and puppeteer (dependabot advisories)
 - Migrate to pnpm v11
 - Add git-cliff config for changelog generation
 - Add git-cliff config for changelog generation
@@ -42,6 +43,7 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 
+- Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
