@@ -1,12 +1,16 @@
 packages:
   - .
 
-pnpm:
-  autoInstallPeers: true
-  strictPeerDependencies: false
-  overrides:
-    postcss: ^8.5.10
-  allowBuilds:
-    puppeteer: true
-    sharp: true
-  packageImportMethod: clone-or-copy
+allowBuilds:
+  esbuild: true
+  puppeteer: true
+  sharp: true
+  workerd: true
+
+autoInstallPeers: true
+strictPeerDependencies: false
+
+overrides:
+  postcss: ^8.5.10
+
+packageImportMethod: clone-or-copy

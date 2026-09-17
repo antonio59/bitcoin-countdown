@@ -1,16 +1,21 @@
 import React from 'react'
 import './globals.css'
 import type { Metadata } from 'next'
-import Script from 'next/script'
+import { JetBrains_Mono } from 'next/font/google'
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+})
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
 export const metadata: Metadata = {
-  title: 'Bitcoin $100k Countdown',
-  description: 'Track Bitcoin\'s journey to $100,000 with live price updates and a visual countdown.',
+  title: 'Bitcoin $100k — Reached',
+  description: 'Bitcoin crossed $100,000 on December 4, 2024. Live price tracker and milestone record.',
   openGraph: {
-    title: 'Bitcoin $100k Countdown',
-    description: 'Track Bitcoin\'s journey to $100,000 with live price updates and a visual countdown.',
+    title: 'Bitcoin $100k — Reached',
+    description: 'Bitcoin crossed $100,000 on December 4, 2024. Live price tracker and milestone record.',
     url: siteUrl,
     siteName: 'Bitcoin $100k Countdown',
     images: [
@@ -26,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bitcoin $100k Countdown',
-    description: 'Track Bitcoin\'s journey to $100,000 with live price updates and a visual countdown.',
+    title: 'Bitcoin $100k — Reached',
+    description: 'Bitcoin crossed $100,000 on December 4, 2024. Live price tracker and milestone record.',
     images: [`${siteUrl}/og-image.png`],
     creator: '@antoniojasmith',
   },
@@ -55,14 +60,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <head>
-        <Script 
-          src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'
-          strategy="afterInteractive"
-        />
-      </head>
-      <body>{children}</body>
+    <html lang="en" className={jetbrainsMono.variable}>
+      <body className="font-mono bg-terminal-bg text-terminal-text">{children}</body>
     </html>
   )
 }

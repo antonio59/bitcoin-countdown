@@ -1,23 +1,27 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 export function useBitcoinPrice() {
   const [price, setPrice] = useState<number | null>(null)
+  const [prevPrice, setPrevPrice] = useState<number | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
   const searchParams = useSearchParams()
+  const priceRef = useRef<number | null>(null)
 
   useEffect(() => {
     const fetchPrice = async () => {
       try {
-        setLoading(true)
         setError(null)
         // Check if we're in test mode
-        const testPrice = searchParams?.get('testPrice')
-        if (testPrice) {
-          setPrice(Number(testPrice))
+        const testPrice = Number(searchParams?.get('testPrice'))
+        if (searchParams?.has('testPrice') && Number.isFinite(testPrice) && testPrice > 0) {
+          setPrevPrice(priceRef.current)
+          priceRef.current = testPrice
+          setPrice(testPrice)
+          setLoading(false)
           return
         }
 
@@ -26,10 +30,13 @@ export function useBitcoinPrice() {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
         const data = await response.json()
-        if (!data.bitcoin || !data.bitcoin.usd) {
+        const usd = data?.bitcoin?.usd
+        if (typeof usd !== 'number' || !Number.isFinite(usd)) {
           throw new Error('Invalid data structure received from API')
         }
-        setPrice(data.bitcoin.usd)
+        setPrevPrice(priceRef.current)
+        priceRef.current = usd
+        setPrice(usd)
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An unknown error occurred')
       } finally {
@@ -43,5 +50,5 @@ export function useBitcoinPrice() {
     return () => clearInterval(interval)
   }, [searchParams])
 
-  return { price, error, loading }
+  return { price, prevPrice, error, loading }
 }

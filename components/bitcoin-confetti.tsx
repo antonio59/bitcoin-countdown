@@ -7,6 +7,8 @@ interface BitcoinConfettiProps {
   show: boolean
 }
 
+const CONFETTI_COLORS = ['#FFB000', '#F7931A', '#F2EAD9', '#FFD25F']
+
 export function BitcoinConfetti({ show }: BitcoinConfettiProps) {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
 
@@ -23,6 +25,5 @@ export function BitcoinConfetti({ show }: BitcoinConfettiProps) {
 
   if (!show) return null
 
-  return <Confetti width={windowSize.width} height={windowSize.height} recycle={false} numberOfPieces={1000} />
+  return <Confetti width={windowSize.width} height={windowSize.height} recycle={false} numberOfPieces={1000} colors={CONFETTI_COLORS} />
 }
-

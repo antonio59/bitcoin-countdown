@@ -2,15 +2,15 @@
 
 import React, { Suspense } from 'react'
 import BitcoinCountdown from '../components/bitcoin-countdown'
+import { CrossingLog } from '../components/crossing-log'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-sm">
-        <Suspense fallback={<div className="animate-pulse bg-gray-200 rounded-xl p-6">Loading...</div>}>
-          <BitcoinCountdown targetPrice={100000} />
-        </Suspense>
-      </div>
+    <main className="flex min-h-screen flex-col items-center justify-center gap-4 p-4 sm:p-8">
+      <Suspense fallback={<div className="w-full max-w-2xl border border-terminal-line bg-terminal-panel px-6 py-20 text-center text-terminal-muted">connecting…</div>}>
+        <BitcoinCountdown targetPrice={100000} />
+      </Suspense>
+      <CrossingLog />
     </main>
   )
 }
