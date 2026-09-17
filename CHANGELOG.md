@@ -52,5 +52,10 @@ All notable changes to this project will be documented in this file.
 - Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
+- Update changelog [skip ci]
+
+### Features
+
+- Relaunch on Cloudflare Pages as $100k milestone record
 
 
