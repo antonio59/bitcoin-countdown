@@ -12,5 +12,6 @@ strictPeerDependencies: false
 
 overrides:
   postcss: ^8.5.10
+  undici: ^7.29.1
 
 packageImportMethod: clone-or-copy
