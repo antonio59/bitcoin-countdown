@@ -73,7 +73,7 @@ async function fromCoinbase(): Promise<Candle[]> {
 }
 
 // A crossing = a day whose high traded at/above target while the previous day closed below.
-function computeCrossings(candles: Candle[]): string[] {
+export function computeCrossings(candles: Candle[]): string[] {
   const sorted = [...candles].sort((a, b) => a.t - b.t)
   const dates: string[] = []
   for (let i = 0; i < sorted.length; i++) {
