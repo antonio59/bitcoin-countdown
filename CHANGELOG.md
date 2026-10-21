@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 
 ### Bug Fixes
 
+- **deps**: Patch Next.js ImageResponse RCE and source-map-js (#2)
 - **deps**: Patch undici security alerts
 - Default og site url to production
 - Remove --frozen-lockfile for pnpm v11 compatibility
@@ -45,6 +46,7 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 
+- Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
