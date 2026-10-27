@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 
 ### Bug Fixes
 
+- **deps**: Bump next to 16.4.1 for remaining critical advisories (#3)
 - **deps**: Patch Next.js ImageResponse RCE and source-map-js (#2)
 - **deps**: Patch undici security alerts
 - Default og site url to production
@@ -46,6 +47,7 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 
+- Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
 - Update changelog [skip ci]
